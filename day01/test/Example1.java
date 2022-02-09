@@ -2,20 +2,24 @@ package day01.test;
 
 public class Example1 {
     public static void main(String[] args) {
-        // Л╫≤Л├■Л╟╫Л≈░ К╛╦Л·░Л≈╢  Л·┘К═╔К╟⌡ЙЁ═, intК║° КЁ─М≥≤
+
         int score = Integer.parseInt(args[0]);
 
-        // Л║╟Й╠╢Л≈░ К■╟К²╪ Л╤°К═╔
-        if (score >= 90) {
-            System.out.println("Л·┘К═╔М∙≤Л▀═ Й╟▓" + score + "Л═░Л²─ Л┬≤Л·┘К▀┬К▀╓.");
-        } else if (score >= 80) {
-            System.out.println("Л·┘К═╔М∙≤Л▀═ Й╟▓" + score + "Л═░Л²─ Л ╟Л·┘К▀┬К▀╓.");
-        } else if (score >= 70) {
-            System.out.println("Л·┘К═╔М∙≤Л▀═ Й╟▓" + score + "Л═░Л²─ К╞╦Л·┘К▀┬К▀╓.");
-        } else if (score >= 60) {
-            System.out.println("Л·┘К═╔М∙≤Л▀═ Й╟▓" + score + "Л═░Л²─ Л√▒Л·┘К▀┬К▀╓.");
+        // а╤╟г©║ ╣Ш╤С цБ╥б
+        if (score < 0 || score > 100) {
+            System.out.println("юъ╦Ь ют╥бго╪л╫ю╢о╢ы.");
         } else {
-            System.out.println("Л·┘К═╔М∙≤Л▀═ Й╟▓" + score + "Л═░Л²─ Й╟─Л·┘К▀┬К▀╓.");
+            if (score >= 90) {
+                System.out.printf("ют╥бго╫е ╟╙ %dа║ю╨ ╪Жют╢о╢ы.", score);
+            } else if (score >= 80) {
+                System.out.printf("ют╥бго╫е ╟╙ %dа║ю╨ ©Лют╢о╢ы.", score);
+            } else if (score >= 70) {
+                System.out.printf("ют╥бго╫е ╟╙ %dа║ю╨ ╧лют╢о╢ы.", score);
+            } else if (score >= 60) {
+                System.out.printf("ют╥бго╫е ╟╙ %dа║ю╨ ╬Гют╢о╢ы.", score);
+            } else {
+                System.out.printf("ют╥бго╫е ╟╙ %dа║ю╨ ╟║ют╢о╢ы.", score);
+            }
         }
     }
 }
