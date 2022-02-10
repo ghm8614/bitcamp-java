@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 public class Hello {
     // : 한 줄 주석, 컴파일시 제외

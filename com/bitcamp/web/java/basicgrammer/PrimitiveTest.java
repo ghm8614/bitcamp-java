@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. 자바에서 제공하는 8EA의 Primitive Data type의 이해
 // 2. Variable declaration(변수선언)과 Variable Assignment(값의 대입)
@@ -10,7 +10,7 @@ public class PrimitiveTest {
         boolean boo = true;
 
         // 문자형
-        char c = '홍';
+//        char c = '홍';
 
         // 정수형
         byte b = 127;
@@ -31,7 +31,7 @@ public class PrimitiveTest {
 
         // + 연산자의 의미 (문자와 +연산자가 사용되면 append)
         System.out.println("논리형 : " + boo);
-        System.out.println("문자형 : " + c);
+//        System.out.println("문자형 : " + c);
         System.out.println("정수형 byte : " + b);
         System.out.println("정수형 short : " + s);
         System.out.println("정수형 int : " + i);

@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. primitive data type 의 형변환 : 묵시적 형변환/ 명시적 형변환
 // 2. reference data type의 형변환 : 묵시적 형변환/ 명시적 형변환  - 추후

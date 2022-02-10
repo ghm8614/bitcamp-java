@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 public class Hi {
     public static void main(String[] args) {

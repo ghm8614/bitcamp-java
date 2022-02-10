@@ -1,4 +1,4 @@
-package day01.test;
+package com.bitcamp.web.java.test;
 
 public class Test2 {
     public static void main(String[] args) {

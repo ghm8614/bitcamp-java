@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. 분기문 : switch 연습
 

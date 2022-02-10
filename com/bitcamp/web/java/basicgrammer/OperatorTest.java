@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. ++, -- : 증가, 감소 연산자
 // 2. %  : 나머지 연산자

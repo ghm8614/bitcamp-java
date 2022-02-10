@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. 조건연산자 연습
 // 2. 분기문 if - else 연습

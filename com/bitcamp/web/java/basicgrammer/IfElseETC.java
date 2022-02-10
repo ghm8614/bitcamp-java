@@ -1,4 +1,4 @@
-package day01;
+package com.bitcamp.web.java.basicgrammer;
 
 // 1. 문자를 int datatype으로 변경하는 Integer.parseInt() 사용
 // 2. 특수문자(이스케이프) 사용하기 (/t, /n, /)
