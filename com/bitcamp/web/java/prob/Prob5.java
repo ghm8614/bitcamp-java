@@ -2,8 +2,8 @@ package com.bitcamp.web.java.prob;
 
 import java.util.Arrays;
 
-// ë°°ì—´ì„ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬
-// forë¬¸ ì‚¬ìš©
+// ¹è¿­À» ¿À¸§Â÷¼ø Á¤·Ä
+// for¹® »ç¿ë
 public class Prob5 {
     public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class Prob5 {
                     array[j] = temp;
                 }
             }
-            System.out.println(min);   // ë°”ê¹¥ forë¬¸ì—ì„œ ì¶œë ¥
+            System.out.println(min);   // ¹Ù±ù for¹®¿¡¼­ Ãâ·Â
         }
     }
 }
