@@ -2,11 +2,11 @@ package com.bitcamp.web.java.oop;
 
 public class Bank01 {
 
+    String userName;
+    String bankName;
+    int command;
     int balance;
     int money;
-    int command;
-    String bankName;
-    String userName;
 
     public Bank01() {
     }
@@ -16,39 +16,39 @@ public class Bank01 {
         this.userName = userName;
     }
 
-    // command String typeìœ¼ë¡œ ë°”ê¾¸ëŠ” ì´ìœ  ê³ ë¯¼í•´ë³´ê¸°
-    public Bank01(String command, String bankName, String userName) {
-        this.command = Integer.parseInt(command);
-        this.bankName = bankName;
+    // command¸¦ String typeÀ¸·Î ¹Ù²Ù´Â ÀÌÀ¯ °í¹ÎÇØº¸±â
+    public Bank01(String userName,String bankName,String command) {
         this.userName = userName;
+        this.bankName = bankName;
+        this.command = Integer.parseInt(command);
     }
 
-    // money, commandë¥¼ String typeìœ¼ë¡œ ë°”ê¾¸ëŠ” ì´ìœ  ê³ ë¯¼í•´ë³´ê¸°
-    public Bank01(String money, String command, String bankName, String userName) {
-        this.money = Integer.parseInt(money);
-        this.command = Integer.parseInt(command);
-        this.bankName = bankName;
+    // money, command¸¦ String typeÀ¸·Î ¹Ù²Ù´Â ÀÌÀ¯ °í¹ÎÇØº¸±â
+    public Bank01(String userName,String bankName,String command, String money) {
         this.userName = userName;
+        this.bankName = bankName;
+        this.command = Integer.parseInt(command);
+        this.money = Integer.parseInt(money);
     }
 
     public void deposit() {
         balance += money;
-        System.out.println(money + "ì› ì…ê¸ˆ");
+        System.out.println(money + "¿ø ÀÔ±İ");
     }
 
     public void displayMoney() {
-        System.out.println("í˜„ì¬ ì”ì•¡ : " + balance + "ì…ë‹ˆë‹¤.");
+        System.out.println("ÇöÀç ÀÜ¾× : " + balance + "ÀÔ´Ï´Ù.");
     }
 
     public static void main(String[] args) {
-        // ìœ íš¨ì„± ì²´í¬
+        // À¯È¿¼º Ã¼Å©
         if (args.length < 2) {
             System.out.println("[usage]: java Bank [customerName][bankName][option][money]");
-            System.out.println("[usage]: ì¸ìê°’ì´ ìµœì†Œ 2ê°œê°€ í•„ìš”í•©ë‹ˆë‹¤.");
+            System.out.println("[usage]: ÀÎÀÚ°ªÀÌ ÃÖ¼Ò 2°³°¡ ÇÊ¿äÇÕ´Ï´Ù.");
             System.exit(0);
         }
 
-        System.out.println(args[0] + "ë‹˜ì˜ ì£¼ê±°ë˜ ì€í–‰ì€" + args[1] + "ì…ë‹ˆë‹¤.");
+        System.out.println(args[0] + "´ÔÀÇ ÁÖ°Å·¡ ÀºÇàÀº " + args[1] + "ÀÔ´Ï´Ù.");
         Bank01 bank = new Bank01();
 
         switch (args.length) {
@@ -60,8 +60,8 @@ public class Bank01 {
                 bank.deposit();
                 break;
             default:
-                System.out.println("í˜¹ì‹œ ì¸ìê°’ì´ ë„ˆë¬´ ë§ê³  ì ì€ê²Œ ì•„ë‹Œì§€..");
-                // break ìƒëµ ê°€ëŠ¥?
+                System.out.println("ÀÔ·Â ÀÎÀÚ °³¼ö°¡ 2, 4°¡ ¾Æ´Õ´Ï´Ù.");
+                // break »ı·« °¡´É?
         }
         bank.displayMoney();
     }
