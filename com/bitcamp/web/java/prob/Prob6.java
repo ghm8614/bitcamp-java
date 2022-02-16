@@ -1,17 +1,48 @@
 package com.bitcamp.web.java.prob;
 
-// ì£¼ì–´ì§„ ë…„ë„ì˜ ì›”ì— í•´ë‹¹í•˜ëŠ” ë§ì¼(maxDay) ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ë¨
+// ÁÖ¾îÁø ³âµµÀÇ ¿ù¿¡ ÇØ´çÇÏ´Â ¸»ÀÏ(maxDay) °è»êÇÏ´Â ÇÁ·Î±×·¥
 
-// ìœ¤ë…„ ì¡°ê±´
-// 1. 4ì˜ ë°°ìˆ˜ : ìœ¤ë…„
-// 2. 4ì˜ ë°°ìˆ˜ì´ë©´ì„œ 100ì˜ ë°°ìˆ˜ : ìœ¤ë…„ x
-// 3. 100ì˜ ë°°ìˆ˜ì´ë©´ì„œ 400ì˜ ë°°ìˆ˜ : ìœ¤ë…„
+import java.util.Scanner;
+
+// À±³â Á¶°Ç
+// 1. 4ÀÇ ¹è¼ö : À±³â
+// 2. 4ÀÇ ¹è¼öÀÌ¸é¼­ 100ÀÇ ¹è¼ö : À±³â x
+// 3. 100ÀÇ ¹è¼öÀÌ¸é¼­ 400ÀÇ ¹è¼ö : À±³â
+
+// year%4 == 0 -> À±³â
+// year%4 == 0 && year%100 == 0 -> À±³â x
+// year%100 == 0 && year%400 == 0 -> À±³â
 public class Prob6 {
+
+    //Method
+    public static int checkFebruaryMaxDay(int year) {
+        int maxDay = 1;
+
+        if (year % 4 == 0) {
+            maxDay = 29;
+
+            if (year % 100 == 0) {
+                maxDay = 28;
+
+                if (year % 400 == 0) {
+                    maxDay = 29;
+                }
+            }
+        }
+        return maxDay;
+    }
+
+    //Main
     public static void main(String[] args) {
 
-        int year = 2010;
-        int month = 2;
-        int maxDay = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("year: ");
+        int year = sc.nextInt();
+
+        System.out.print("month: ");
+        int month = sc.nextInt();
+        int maxDay = 1;
 
         switch (month) {
             case 1:
@@ -32,27 +63,10 @@ public class Prob6 {
                 break;
 
             case 2:
-                // ìœ¤ë…„ì¼ì‹œ, maxDay = 29;
-                // ìœ¤ë…„ì•„ë‹ì‹œ, maxDay = 28;
-                maxDay = 28;
+                maxDay = checkFebruaryMaxDay(year);
                 break;
         }
 
-        // year%4 == 0 -> ìœ¤ë…„
-        // year%4 == 0 && year%100 == 0 -> ìœ¤ë…„ x
-        // year%100 == 0 && year%400 == 0 -> ìœ¤ë…„
-
-
-//        if (year % 100 == 0) {
-//            if (year % 400 == 0) {
-//                System.out.println("ìœ¤ë…„ì…ë‹ˆë‹¤.");
-//            } else if (year % 4 == 0) {
-//                System.out.println("ìœ¤ë…„ì´ ì•„ë‹™ë‹ˆë‹¤.");
-//            }
-//        }
-
-
-
-        System.out.println(year + "ë…„ " + month + "ì›”ì˜ ë§ì¼ì€ " + maxDay + "ì¼ ì…ë‹ˆë‹¤.");
+        System.out.println(year + "³â " + month + "¿ùÀÇ ¸»ÀÏÀº " + maxDay + "ÀÏ ÀÔ´Ï´Ù.");
     }
 }
