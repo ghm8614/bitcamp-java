@@ -1,13 +1,11 @@
-package com.bitcamp.web.java.oop.jb05.part04.test02;
+package com.bitcamp.web.java.oop.jb05.part07;
 
-// abstract Method/ abstract class 의 필요성과 이해
+// Interface = pure abstract class
 
-// abstract method : 해당 클래스에서 사용될 수 없는 메서드이며, 구체적이지 않다.(body 구현부가 없다)
-// 상속한 하위클래스에서 Overriding을 통해 abstact method의 기능을 구체적으로 명시해야한다.
+// abstract methods 의 집합 (기능만 정의하고 하위클래스에서 오버라이딩 강요)
+// interface 에서는 모두가 abstract 이기 때문에, abstract 키워드를 붙이지 않는다.
+// 인스턴스 생성 불가
 
-// abstract method가 존재하는 클래스는 사용할 수 없는 메서드를 하나 가지고 있기 때문에,
-// 인스턴스 생성을 할 수 없고,
-// 인스턴스를 생성할 수 없는 클래스임을 나타내는 abstact 키워드를 클래스 앞에 붙여준다.
 abstract class BusCharge {
 
     String section;
@@ -20,44 +18,46 @@ abstract class BusCharge {
         System.out.println("버스 요금 안내");
     }
 
-    // abstract method
-    public abstract void charge();  // 다형성 : 하나의 인터페이스 -> 다양한 활용
+}
 
-}// end of class
+// 추가된 interface
+interface Fee{
+    public void charge();
+}
 
-class Student extends BusCharge {
+// 추상메서드 반드시 구현
+class Student extends BusCharge implements Fee{
 
     public Student() {
         super("학생");
     }
 
-    // 오버라이딩
     @Override
     public void charge() {
         System.out.println("300원");
     }
 }
 
-class Adult extends BusCharge {
+class Adult extends BusCharge implements Fee{
 
     public Adult() {
         super("일반인");
     }
 
-    // 오버라이딩
+    // 반드시 오버라이딩
     @Override
     public void charge() {
         System.out.println("500원");
+
     }
 }
 
-class Old extends BusCharge {
+class Old extends BusCharge implements Fee{
 
     public Old() {
         super("어르신");
     }
-    
-    // 오버라이딩
+
     @Override
     public void charge() {
         System.out.println("무료");
@@ -84,5 +84,13 @@ public class Display {
         b3.information();
         System.out.println(b3.section);
         b3.charge();
+
+        // 컴파일 에러
+        /*
+        Fee[] fee = new Fee[3];
+        fee[0] = new Student();
+        fee[1] = new Adult();
+        fee[2] = new Old();
+         */
     }
 }
