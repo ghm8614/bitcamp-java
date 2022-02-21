@@ -22,7 +22,7 @@ abstract class BusCharge {
 
 // 추가된 interface
 interface Fee{
-    public void charge();
+    public abstract void charge();
 }
 
 // 추상메서드 반드시 구현

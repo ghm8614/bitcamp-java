@@ -4,8 +4,8 @@ package com.bitcamp.web.java.oop.jb05.part08;
 public interface Deposit {
 
     // 인터페이스 field -> 자동으로 static final 이 적용됨
-    String deposit = "입금";
+    public static final String deposit = "입금";
 
     // 인터페이스 method
-    void deposit(int money);
+    public abstract void deposit(int money);
 }
