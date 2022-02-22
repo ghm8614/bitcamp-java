@@ -1,5 +1,4 @@
-package jp01.part05;
-
+package com.bitcamp.web.java.oop.jp01.part05;
 import java.util.Vector;
 
 public class VectorTest01 {

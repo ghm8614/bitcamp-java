@@ -1,4 +1,4 @@
-package jp01.part07;
+package com.bitcamp.web.java.oop.jp01.part07;
 
 import java.util.ArrayList;
 

@@ -1,8 +1,8 @@
-package jp01.part07;
+package com.bitcamp.web.java.oop.jp01.part07;
 
 import java.util.Vector;
 
-import jp01.part06.VectorTest02;
+import com.bitcamp.web.java.oop.jp01.part06.VectorTest02;
 
 public class VectorTest03 {
 

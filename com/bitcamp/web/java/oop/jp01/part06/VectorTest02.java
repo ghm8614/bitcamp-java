@@ -1,4 +1,4 @@
-package jp01.part06;
+package com.bitcamp.web.java.oop.jp01.part06;
 
 import java.util.Vector;
 

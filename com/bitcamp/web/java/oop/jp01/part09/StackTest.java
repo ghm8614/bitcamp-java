@@ -1,4 +1,4 @@
-package jp01.part09;
+package com.bitcamp.web.java.oop.jp01.part09;
 
 import java.util.Stack;
 

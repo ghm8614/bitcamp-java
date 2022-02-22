@@ -1,4 +1,4 @@
-package jp01.part03;
+package com.bitcamp.web.java.oop.jp01.part03;
 
 public class StringTest03 {
 
