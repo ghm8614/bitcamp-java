@@ -1,6 +1,6 @@
 package com.bitcamp.web.java.prob;
 
-public class Prob15 {
+public class Prob16 {
 
     //Method
     private static String encrypt(String sourceString, String encodedString) {
