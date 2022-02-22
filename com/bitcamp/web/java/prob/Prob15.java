@@ -1,68 +1,32 @@
 package com.bitcamp.web.java.prob;
 
-public class Prob15 {
+public class Prob16 {
 
-    //Method
-    private static String encrypt(String sourceString, String encodedString) {
-
-        // ' ' -> ' '
-        // 'x' -> 'a', 'y' -> 'b', 'z' -> 'c'
-        for (int i = 0; i < sourceString.length(); i++) {
-
-            char newChar = ' ';
-            switch (sourceString.charAt(i)) {
-                case ' ':
-                    //newChar = ' '; 생략가능
-                    break;
-                case 'x':
-                    newChar = 'a';
-                    break;
-                case 'y':
-                    newChar = 'b';
-                    break;
-                case 'z':
-                    newChar = 'c';
-                    break;
-                default:
-                    newChar = (char) (sourceString.charAt(i) + 3);
-            }//end of switch
-            encodedString += newChar;
-
-        }//end of for
-        return encodedString;
-    }
-/*
-    private static String encrypt2(String sourceString, String encodedString) {
-
-        for (int i = 0; i < sourceString.length(); i++) {
-
-            if (sourceString.charAt(i) == ' ') {
-                encodedString += ' ';
-            } else if (sourceString.charAt(i) == 'x') {
-                encodedString += 'a';
-            } else if (sourceString.charAt(i) == 'y') {
-                encodedString += 'b';
-            } else if (sourceString.charAt(i) == 'z') {
-                encodedString += 'c';
-            } else {    // 공백, x, y, z 가 아니면
-                encodedString += (char) (sourceString.charAt(i) + 3);
-            }
-        }
-        return encodedString;
-    }
- */
-    //Main
     public static void main(String[] args) {
 
-        String sourceString = "everyday we have is one more than we deserve";
-        String encodedString = "";
+        Book book1 = new Book("Java Program", 25000);
+        Book book2 = new Book("JSP Program", 15000);
+        Book book3 = new Book("SQL Fundamentals", 30000);
+        Book book4 = new Book("JDBC Program", 28000);
+        Book book5 = new Book();
+        book5.setTitle("EJB Program");
+        book5.setPrice(34000);
 
-        // 호출
-        encodedString = encrypt(sourceString, encodedString);
+        Book[] bookList = new Book[5];
 
-        // 출력
-        System.out.println("암호화 전 문자열 : " + sourceString);
-        System.out.println("암호화 후 문자열 : " + encodedString);
+        bookList[0] = book1;
+        bookList[1] = book2;
+        bookList[2] = book3;
+        bookList[3] = book4;
+        bookList[4] = book5;
 
+        BookMgr mgr = new BookMgr(bookList);
+
+        System.out.println("========책 목록========");
+        mgr.printBookList();
+        System.out.println("");
+
+        System.out.println("=====책 가격의 총합=======");
+        mgr.printTotalPrice();
     }
 }
