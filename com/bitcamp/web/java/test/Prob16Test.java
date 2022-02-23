@@ -1,6 +1,6 @@
-package com.bitcamp.web.java.prob;
+package com.bitcamp.web.java.test;
 
-public class Prob16 {
+public class Prob16Test {
 
     //Method
     private static String encrypt(String sourceString, String encodedString) {
@@ -30,38 +30,23 @@ public class Prob16 {
         }//end of for
         return encodedString;
     }
-/*
-    private static String encrypt2(String sourceString, String encodedString) {
 
-        for (int i = 0; i < sourceString.length(); i++) {
-
-            if (sourceString.charAt(i) == ' ') {
-                encodedString += ' ';
-            } else if (sourceString.charAt(i) == 'x') {
-                encodedString += 'a';
-            } else if (sourceString.charAt(i) == 'y') {
-                encodedString += 'b';
-            } else if (sourceString.charAt(i) == 'z') {
-                encodedString += 'c';
-            } else {    // 공백, x, y, z 가 아니면
-                encodedString += (char) (sourceString.charAt(i) + 3);
-            }
-        }
-        return encodedString;
-    }
- */
     //Main
     public static void main(String[] args) {
 
         String sourceString = "everyday we have is one more than we deserve";
         String encodedString = "";
 
-        // 호출
-        encodedString = encrypt(sourceString, encodedString);
+        for (int i = 0; i < sourceString.length(); i++) {
+            System.out.print((char)(sourceString.charAt(i)+3));
+        }
 
-        // 출력
-        System.out.println("암호화 전 문자열 : " + sourceString);
-        System.out.println("암호화 후 문자열 : " + encodedString);
+//        // 호출
+//        encodedString = encrypt(sourceString, encodedString);
+//
+//        // 출력
+//        System.out.println("암호화 전 문자열 : " + sourceString);
+//        System.out.println("암호화 후 문자열 : " + encodedString);
 
     }
 }

@@ -14,8 +14,7 @@ public class Prob18 {
         int[] primeArray = util.findPrimeReturnArray(limit);
 
         for (int i = 0; i < primeArray.length; i++) {
-            System.out.println(primeArray[i] + (primeArray.length - 1) != i ? "," : "");
-
+            System.out.println(primeArray[i] + ((primeArray.length - 1) != i ? "," : ""));
         }
     }
 }

@@ -6,16 +6,18 @@ public class Prob19 {
     public String leftPad(String str, int size, char padChar) {
 
         String result = "";
-        int padCharSize = size - str.length();
+        int charCnt = size - str.length();
 
         if (str.length() > size) {
             return str;
         }
 
-        for (int i = 0; i < padCharSize; i++) {
+        for (int i = 0; i < charCnt; i++) {
+//            result += String.format("%c", padChar);
             result += padChar;
         }
         result += str;
+//        result += String.format("%s", str);
 
         return result;
     }
