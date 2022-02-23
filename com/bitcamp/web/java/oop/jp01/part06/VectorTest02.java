@@ -24,22 +24,22 @@ public class VectorTest02 extends Vector {
 	public static void main(String[] args) {
 		VectorTest02 vectorTest = new VectorTest02(10, 10);
 		
-		String s1 = new String("1.Ìôç");
+		String s1 = new String("1.»´");
 		vectorTest.add(s1);
-		vectorTest.add(new String("2.Îèô"));
-		vectorTest.add("3.Îãò ÏïàÎÖïÌïòÏÑ∏Ïöî");
+		vectorTest.add(new String("2.µø"));
+		vectorTest.add("3.¥‘ æ»≥Á«œººø‰");
 		
 		vectorTest.printString(vectorTest);
 		
-		System.out.println("\n ==> API ÌôïÏù∏");
-		vectorTest.insertElementAt("4.Í∏∏",1);
+		System.out.println("\n ==> API »Æ¿Œ");
+		vectorTest.insertElementAt("4.±Ê",1);
 		vectorTest.printString(vectorTest);
 		
-		System.out.println("\n ==> API ÌôïÏù∏");
-		vectorTest.setElementAt("5.,ÌôçÍ∏∏Ïàú",3);
+		System.out.println("\n ==> API »Æ¿Œ");
+		vectorTest.setElementAt("5.,»´±Êº¯",3);
 		vectorTest.printString(vectorTest);
 		
-		System.out.println("\n ==> API ÌôïÏù∏");
+		System.out.println("\n ==> API »Æ¿Œ");
 		vectorTest.removeElementAt(3);
 		vectorTest.printString(vectorTest);
 	}//end of main

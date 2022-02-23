@@ -8,10 +8,10 @@ public class QueueTest {
 	public static void main(String[] args) {
 		Queue<String> queue = new LinkedList<String>();
 		
-		String value = new String("1: í™ê¸¸ë™");
+		String value = new String("1: È«±æµ¿");
 		queue.offer(value);
-		queue.offer(new String("2.: ì´ìˆœì‹ "));
-		queue.offer("3: ì£¼ëª½");
+		queue.offer(new String("2.: ÀÌ¼ø½Å"));
+		queue.offer("3: ÁÖ¸ù");
 		
 		String str1 = (String)queue.poll();
 		System.out.println(str1);

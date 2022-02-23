@@ -8,20 +8,20 @@ public class StackTest {
 		
 		Stack<String> stack = new Stack<String>();
 		
-		String value = new String("1 : í™ê¸¸ë™");
+		String value = new String("1 : È«±æµ¿");
 		stack.push(value);
-		stack.push(new String("2.: ì´ìˆœì‹ "));
-		stack.push("3 : ì£¼ëª½");
+		stack.push(new String("2.: ÀÌ¼ø½Å"));
+		stack.push("3 : ÁÖ¸ù");
 		
-		System.out.println("==> ì €ì¥ëœ Data ê°œìˆ˜ : "+stack.size());
+		System.out.println("==> ÀúÀåµÈ Data °³¼ö : "+stack.size());
 		String str1 = stack.pop();
 		System.out.println(str1);
 		
-		System.out.println("==> ì €ì¥ëœ Data ê°œìˆ˜ : "+stack.size());
+		System.out.println("==> ÀúÀåµÈ Data °³¼ö : "+stack.size());
 		String str2 = stack.peek();
 		System.out.println(str2);
 		
-		System.out.println("==> ì €ì¥ëœ Data ê°œìˆ˜ : "+stack.size());
+		System.out.println("==> ÀúÀåµÈ Data °³¼ö : "+stack.size());
 		while( !stack.isEmpty()) {
 		String str3 = (String)stack.pop();
 		System.out.println(str3);

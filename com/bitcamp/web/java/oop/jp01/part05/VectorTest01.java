@@ -6,10 +6,10 @@ public class VectorTest01 {
 	public static void main(String[] args) {
 		Vector vector = new Vector(10, 10);
 		
-		String s1 = new String("1.í™");
+		String s1 = new String("1.È«");
 		vector.add(s1);
-		vector.add(new String("2.ë™"));
-		vector.add("3.ë‹˜ ì•ˆë…•í•˜ì„¸ìš”");
+		vector.add(new String("2.µ¿"));
+		vector.add("3.´Ô ¾È³çÇÏ¼¼¿ä");
 		
 		for(int i = 0; i < vector.size(); i++) {
 			Object obj = vector.elementAt(i);
@@ -19,19 +19,19 @@ public class VectorTest01 {
 //			System.out.print((String)vector.elementAt(i));
 		}
 		
-		System.out.println("\n ==> API í™•ì¸ ");
-		vector.insertElementAt("4.ê¸¸",1);
+		System.out.println("\n ==> API È®ÀÎ ");
+		vector.insertElementAt("4.±æ",1);
 		for(int i = 0; i < vector.size(); i++) {
 			System.out.print((String)vector.elementAt(i));
 		}
 		
-		System.out.println("\n ==> API í™•ì¸ ");
-		vector.setElementAt("5.,í™ê¸¸ìˆœ",3);
+		System.out.println("\n ==> API È®ÀÎ ");
+		vector.setElementAt("5.,È«±æ¼ø",3);
 		for(int i = 0; i < vector.size(); i++) {
 			System.out.print((String)vector.elementAt(i));
 		}
 			
-		System.out.println("\n ==> API í™•ì¸ ");
+		System.out.println("\n ==> API È®ÀÎ ");
 		vector.removeElementAt(3);
 		for(int i = 0; i < vector.size(); i++) {
 		System.out.print((String)vector.elementAt(i));

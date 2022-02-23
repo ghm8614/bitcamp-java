@@ -9,30 +9,30 @@ public class MapTest {
 		
 		Map<String, String> map = new Hashtable<String, String>();
 		
-		String key = new String("í™ê¸¸ë™");
-		String value = new String("ì˜ì ");
+		String key = new String("È«±æµ¿");
+		String value = new String("ÀÇÀû");
 		map.put(key, value);
 		
-		map.put("ì´ìˆœì‹ ", "ìˆ˜êµ° ëŒ€ì¥êµ°");
-		map.put("ì£¼ëª½", "ê³ êµ¬ë ¤ì‹œì¡°");
+		map.put("ÀÌ¼ø½Å", "¼ö±º ´ëÀå±º");
+		map.put("ÁÖ¸ù", "°í±¸·Á½ÃÁ¶");
 		
-		String value01 = map.get("ì£¼ëª½");
-		System.out.println("ì£¼ëª½ ì„¤ëª… : "+ value01);
+		String value01 = map.get("ÁÖ¸ù");
+		System.out.println("ÁÖ¸ù ¼³¸í : "+ value01);
 		
-		if(map.containsKey("ì´ìˆœì‹ ")) {
-		System.out.println("ì´ìˆœì‹ ì„ keyë¡œ ê°–ëŠ” valueê°€ ìˆìœ¼ë©° value : "+map.get("ì´ìˆœì‹ "));
+		if(map.containsKey("ÀÌ¼ø½Å")) {
+		System.out.println("ÀÌ¼ø½ÅÀ» key·Î °®´Â value°¡ ÀÖÀ¸¸ç value : "+map.get("ÀÌ¼ø½Å"));
 		}
 		
-		if(map.containsKey("ê¹€ìœ ì‹ ")) {
-			System.out.println("ê¹€ìœ ì‹ ì„ keyë¡œ ê°–ëŠ” valueê°€ ìˆìœ¼ë©° value : "+map.get("ê¹€ìœ ì‹ "));
+		if(map.containsKey("±èÀ¯½Å")) {
+			System.out.println("±èÀ¯½ÅÀ» key·Î °®´Â value°¡ ÀÖÀ¸¸ç value : "+map.get("±èÀ¯½Å"));
 		}
 		
-		if(map.containsValue("ì˜ì ")) {
-			System.out.println("ì˜ì ì„ valueë¡œ ê°–ëŠ” dataê°€ ìˆìŠµë‹ˆë‹¤.");
+		if(map.containsValue("ÀÇÀû")) {
+			System.out.println("ÀÇÀûÀ» value·Î °®´Â data°¡ ÀÖ½À´Ï´Ù.");
 		}
 		
-		if(map.containsValue("ë„ì ")) {
-			System.out.println("ë„ì ì„ valueë¡œ ê°–ëŠ” dataê°€ ìˆìŠµë‹ˆë‹¤.");
+		if(map.containsValue("µµÀû")) {
+			System.out.println("µµÀûÀ» value·Î °®´Â data°¡ ÀÖ½À´Ï´Ù.");
 		}
 		
 	}

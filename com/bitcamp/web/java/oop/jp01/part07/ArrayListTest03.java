@@ -2,38 +2,38 @@ package com.bitcamp.web.java.oop.jp01.part07;
 
 import java.util.ArrayList;
 
-public class ArrayTest03 {
+public class ArrayListTest03 {
 
 	public static void main(String[] args) {
 		ArrayList<String> arrayList = new ArrayList<String>(10);
 		
-		String s1 = new String("1.í™");
+		String s1 = new String("1.È«");
 		arrayList.add(s1);
-		arrayList.add(new String("2.ê¸¸"));
-		arrayList.add("3.ë‹˜ ì•ˆë…•í•˜ì„¸ìš”");
+		arrayList.add(new String("2.±æ"));
+		arrayList.add("3.´Ô ¾È³çÇÏ¼¼¿ä");
 		
 		for(int i = 0; i < arrayList.size(); i++) {
 			System.out.print(arrayList.get(i));
 		}
-		System.out.println("\nJDK 1.5 ì¶”ê°€ê¸°ëŠ¥::Generic, Enhanced For Loop ì‚¬ìš©");
+		System.out.println("\nJDK 1.5 Ãß°¡±â´É::Generic, Enhanced For Loop »ç¿ë");
 		
 		for(String value : arrayList) {
 			System.out.print(value);
 		}
 		
-		System.out.println("\n ==> API í™•ì¸");
-		arrayList.add(1,"4.ê¸¸");
+		System.out.println("\n ==> API È®ÀÎ");
+		arrayList.add(1,"4.±æ");
 		for(int i = 0; i < arrayList.size(); i++) {
 			System.out.print(arrayList.get(i));
 		}
 		
-		System.out.println("\n ==> API í™•ì¸");
-		arrayList.set(3,"4.í™ê¸¸ìˆœ");
+		System.out.println("\n ==> API È®ÀÎ");
+		arrayList.set(3,"4.È«±æ¼ø");
 		for(int i = 0; i < arrayList.size(); i++) {
 			System.out.print(arrayList.get(i));
 		}
 		
-		System.out.println("\n ==> API í™•ì¸");
+		System.out.println("\n ==> API È®ÀÎ");
 		arrayList.remove(3);
 		for(int i = 0; i < arrayList.size(); i++) {
 			System.out.print(arrayList.get(i));

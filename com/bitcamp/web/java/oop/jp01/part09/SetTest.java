@@ -10,23 +10,23 @@ public class SetTest {
 		
 		String str = new String("A");
 		boolean isAddOk = hs.add(str);
-		System.out.println("ì €ì¥ ìœ ë¬´ : "+isAddOk);
+		System.out.println("ÀúÀå À¯¹« : "+isAddOk);
 		
 		isAddOk = hs.add("b");
-		System.out.println("ì €ì¥ ìœ ë¬´ : "+isAddOk);
+		System.out.println("ÀúÀå À¯¹« : "+isAddOk);
 		
 		isAddOk = hs.add("B");
-		System.out.println("ì €ì¥ ìœ ë¬´ : "+isAddOk);
+		System.out.println("ÀúÀå À¯¹« : "+isAddOk);
 		
 		isAddOk = hs.add("B");
-		System.out.println("ì €ì¥ ìœ ë¬´ : "+isAddOk);
+		System.out.println("ÀúÀå À¯¹« : "+isAddOk);
 		
-		System.out.println("ì €ì¥ëœ data ê°œìˆ˜ : "+hs.size());
+		System.out.println("ÀúÀåµÈ data °³¼ö : "+hs.size());
 		if(hs.contains("b")) {
-			System.out.println("ì €ì¥ëœ data bë¥¼ ì‚­ì œí•¨.");
+			System.out.println("ÀúÀåµÈ data b¸¦ »èÁ¦ÇÔ.");
 			hs.remove("b");
 		}
-		System.out.println("ì €ì¥ëœ data ê°œìˆ˜ : "+hs.size());
+		System.out.println("ÀúÀåµÈ data °³¼ö : "+hs.size());
 		
 	}
 

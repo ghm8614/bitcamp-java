@@ -18,7 +18,16 @@ public class Circle extends Shape {
     // 구현강제
     @Override
     public void calculationArea() {
-        super.setArea(radius * radius * Math.PI);
+
+        // 모두 가능 (getter 메서드 또는 필드)
+//        super.setArea(radius * radius * Math.PI);
+//        this.setArea(radius * radius * Math.PI);
+//        setArea(radius * radius * Math.PI);
+
+//        super.area = radius * radius * Math.PI;
+//        this.area = radius * radius * Math.PI;
+        area = radius * radius * Math.PI;
+
     }
 
     //getter/setter
@@ -30,3 +39,4 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 }
+
