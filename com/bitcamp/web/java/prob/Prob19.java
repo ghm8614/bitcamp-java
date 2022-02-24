@@ -13,11 +13,9 @@ public class Prob19 {
         }
 
         for (int i = 0; i < charCnt; i++) {
-//            result += String.format("%c", padChar);
             result += padChar;
         }
         result += str;
-//        result += String.format("%s", str);
 
         return result;
     }
