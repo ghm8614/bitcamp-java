@@ -2,9 +2,18 @@ package com.bitcamp.web.java.prob;
 
 public class Prob20 {
 
+    // 문자열에서 특정문자를 다른문자로 바꾸는 메서드
     public static String myReplace(String str, char oldChar, char newChar) {
 
-        return null;
+        String result = "";
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) == oldChar) {
+                result += newChar;
+            } else {
+                result += str.charAt(i);
+            }
+        }
+        return result;
     }
 
     //Main
