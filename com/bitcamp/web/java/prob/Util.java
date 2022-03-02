@@ -1,6 +1,8 @@
 package com.bitcamp.web.java.prob;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class Util {
 
@@ -25,7 +27,7 @@ public class Util {
         return primeCnt;
     }
 
-    // 2부터 limit 까지의 소수를 배열에 저장하고 리턴하는 메서드
+    // 반환타입 int[]
     public int[] findPrimeReturnArray(int limit) {
 
         int primeCnt = findPrimeCnt(limit); // 위 메서드 호출
@@ -50,5 +52,28 @@ public class Util {
 
 //        System.out.println(Arrays.toString(primeArr));
         return primeArr;
+    }
+
+    // 반환타입 List 인터페이스 (Vector/ArrayList 쉽게 변경가능)
+    public List<Integer> findPrimeReturnArrayList(int limit) {
+
+        List<Integer> primeArrayList = new ArrayList<>(); // 배열처럼 크기를 지정하지 않아도 된다.
+
+        boolean isPrime;
+
+        for (int i = 2; i <= limit; i++) {
+            isPrime = true; //
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) { // 나누어 떨어지면
+                    isPrime = false;    // 소수 x
+                    break;
+                }
+            }
+            if (isPrime) {
+                primeArrayList.add(i);  // 배열처럼 반복문을 통해 인덱스에 접근 후, 값을 대입하지 않아도 된다.
+            }
+        }//end of for
+
+        return primeArrayList;
     }
 }
