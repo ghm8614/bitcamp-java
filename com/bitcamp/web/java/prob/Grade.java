@@ -1,36 +1,37 @@
 package com.bitcamp.web.java.prob;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Grade {
 
     //M
-    public void printGrade(String fileName) throws IOException {
-
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        PrintWriter pw = new PrintWriter(System.out, true);
+    public void printGrade(String fileName) {
 
         String name = "";
         int score = 0;
         int total = 0;
         int lineCnt = 0;
 
-        String str = "";
-        while ((str = br.readLine()) != null) {
-            name = str.split(",")[0];
-            score = Integer.parseInt(str.split(",")[1]);
-            total += score;
-            lineCnt++;
+        // InputStream, outputStream, Reader, Writer ¸ğµÎ AutoCloseable ÀÎÅÍÆäÀÌ½º¸¦ ±¸Çö
+        // AutoCloseable : try-with-resource ¸¦ »ç¿ëÇØ¼­ ÀÚµ¿ close() »ç¿ë °¡´É (finally¿¡ close() ÇÒ ÇÊ¿ä x)
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName));
+             PrintWriter pw = new PrintWriter(System.out, true)) {
 
-            pw.printf("%sì˜ ì ìˆ˜ëŠ” %dì  ì…ë‹ˆë‹¤.\n", name, score);
+            String str = "";
+            while ((str = br.readLine()) != null) {
+                name = str.split(",")[0];
+                score = Integer.parseInt(str.split(",")[1]);
+                total += score;
+                lineCnt++;
+
+                pw.printf("%sÀÇ Á¡¼ö´Â %dÁ¡ ÀÔ´Ï´Ù.\n", name, score);
+            }
+
+            pw.printf("¸ğµÎÀÇ ÃÑÁ¡Àº %dÁ¡ ÀÔ´Ï´Ù.\n", total);
+            pw.printf("¸ğµÎÀÇ Æò±ÕÀº %dÁ¡ ÀÔ´Ï´Ù.", total / lineCnt);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        br.close();
-
-        pw.printf("ëª¨ë‘ì˜ ì´ì ì€ %dì  ì…ë‹ˆë‹¤.\n", total);
-        pw.printf("ëª¨ë‘ì˜ í‰ê· ì€ %dì  ì…ë‹ˆë‹¤.", total / lineCnt);
-        pw.close();
     }
 
     //Main
