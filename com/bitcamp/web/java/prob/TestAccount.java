@@ -1,4 +1,6 @@
-class TestAccount 
+package com.bitcamp.web.java.prob;
+
+class TestAccount
 {
 
 	public static void main(String[] args) 

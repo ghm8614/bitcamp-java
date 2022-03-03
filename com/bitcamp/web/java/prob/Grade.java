@@ -7,8 +7,8 @@ public class Grade {
     //M
     public void printGrade(String fileName) {
 
-        String name = "";
-        int score = 0;
+        String name;
+        int score;
         int total = 0;
         int lineCnt = 0;
 
@@ -17,10 +17,10 @@ public class Grade {
         try (BufferedReader br = new BufferedReader(new FileReader(fileName));
              PrintWriter pw = new PrintWriter(System.out, true)) {
 
-            String str = "";
-            while ((str = br.readLine()) != null) {
-                name = str.split(",")[0];
-                score = Integer.parseInt(str.split(",")[1]);
+            String oneLine;
+            while ((oneLine = br.readLine()) != null) {
+                name = oneLine.split(",")[0];
+                score = Integer.parseInt(oneLine.split(",")[1]);
                 total += score;
                 lineCnt++;
 

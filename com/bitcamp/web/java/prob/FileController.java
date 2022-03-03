@@ -16,13 +16,10 @@ public class FileController {
         List<String> list = new ArrayList<>();
 
         // read()
-        while (true) {
+        String oneLine;
 
-            String str = br.readLine();
-            if (str == null) {
-                break;
-            }
-            list.add(str);
+        while ((oneLine = br.readLine()) != null) {
+            list.add(oneLine);
         }
         br.close();
 
@@ -31,8 +28,7 @@ public class FileController {
             bw.write(list.get(i));
             bw.newLine();
         }
-//        bw.flush();
-
+        bw.flush();
         bw.close();
     }
 
@@ -45,13 +41,10 @@ public class FileController {
         Stack<String> stack = new Stack<>();
 
         // read()
-        while (true) {
+        String oneLine;
 
-            String str = br.readLine();
-            if (str == null) {
-                break;
-            }
-            stack.push(str);
+        while ((oneLine = br.readLine()) != null) {
+            stack.push(oneLine);
         }
         br.close();
 
@@ -60,8 +53,7 @@ public class FileController {
             bw.write(stack.pop());
             bw.newLine();
         }
-//        bw.flush();
-
+        bw.flush();
         bw.close();
     }
 
@@ -70,7 +62,7 @@ public class FileController {
         FileController c = new FileController();
         String oldf = "files/oldf.txt";
         String newf = "files/newf.txt";
-        c.reverseLine2(oldf, newf);
+        c.reverseLine1(oldf, newf);
     }//end of main
 
 }//end of class

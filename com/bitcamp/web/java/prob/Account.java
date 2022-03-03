@@ -1,4 +1,6 @@
-class Account 
+package com.bitcamp.web.java.prob;
+
+class Account
 {
 	//Field
 	String accNo;

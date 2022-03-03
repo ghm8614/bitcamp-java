@@ -2,6 +2,7 @@ package com.bitcamp.web.java.prob;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FileCompareUtil {
 
@@ -9,12 +10,12 @@ public class FileCompareUtil {
     // 두 파일의 내용을 라인별로 비교
     // 다른 경우에 ArrayList에 담아서 리턴
 
-    public ArrayList<String> compareFile(String firstFileName, String scdFileName) throws Exception {
+    public List<String> compareFile(String firstFileName, String scdFileName) throws Exception {
 
         BufferedReader br1 = new BufferedReader(new FileReader(firstFileName));
         BufferedReader br2 = new BufferedReader(new FileReader(scdFileName));
 
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
 
         int line = 0;
 
