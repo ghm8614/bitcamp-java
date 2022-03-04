@@ -30,8 +30,8 @@ public class Prob31 {
         System.out.println("========================");
         System.out.println("파일 내용 중 경기도 정보 검색");
         vector = FileUtil.fileFindAddress(pathName, "경기도");
-        for (int i = 0; i < vector.size(); i++) {
-            System.out.println(vector.get(i).toString());
+        for (User user : vector) {
+            System.out.println(user);
         }
 
 

@@ -37,7 +37,7 @@ public class FileUtil {
                 StringTokenizer st = new StringTokenizer(oneLine, "/");
 
                 String name = st.nextToken();
-                address = st.nextToken();
+                st.nextToken();
                 String cellularNumber = st.nextToken();
                 String male = st.nextToken();
                 boolean isMale = male.equals("³²");
