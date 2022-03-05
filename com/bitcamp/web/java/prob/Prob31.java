@@ -1,5 +1,6 @@
 package com.bitcamp.web.java.prob;
 
+import java.util.List;
 import java.util.Vector;
 
 public class Prob31 {
@@ -15,7 +16,7 @@ public class Prob31 {
 
         System.out.println("========================");
         System.out.println("파일 내용 중 서울 정보 검색");
-        Vector<User> vector = FileUtil.fileFindAddress(pathName, "서울");
+        List<User> vector = FileUtil.fileFindAddress(pathName, "서울");
         for (int i = 0; i < vector.size(); i++) {
             System.out.println(vector.get(i));
         }

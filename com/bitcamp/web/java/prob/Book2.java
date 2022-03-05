@@ -38,7 +38,6 @@ public class Book2 {
     }
 
     //toString 오버라이딩
-
     @Override
     public String toString() {
         return "Book2 [title=" + title + ", kind=" + kind + ", rentalPrice=" + rentalPrice + "]";
