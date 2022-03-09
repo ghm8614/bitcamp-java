@@ -16,8 +16,7 @@ public class Prob29 {
         String[] parsingStr = bookData.split(" : ");
 
         // RuntimeException :
-        // 발생 할 수도 있고 발생하지 않을 수도 있는 예외이기 때문에,
-        // throws 할 필요가 없다.
+        // 예외처리를 강제하지 않는다.
         if (parsingStr.length != 3) {
             throw new DataFormatException(parsingStr[0] + "책 정보는 변환할 수 없는 데이터 포맷입니다.");
         }

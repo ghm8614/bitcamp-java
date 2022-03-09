@@ -27,7 +27,7 @@ public class Prob30 {
         //¹æ¹ý1
         int[] randomArr = new int[set.size()];
         int i = 0;
-        for (Integer randomNum : set) {
+        for (int randomNum : set) {
             randomArr[i++] = randomNum;
         }
 
