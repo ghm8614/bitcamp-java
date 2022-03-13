@@ -1,0 +1,46 @@
+O
+--문제1
+
+SELECT employee_id, last_name, salary, manager_id
+FROM employees;
+
+
+SELECT employee_id, salary
+FROM employees;
+
+SELECT E.employee_id 직원id, E.last_name, E.salary 직원연봉, E.manager_id 매니저id, E2.employee_id 매니저id, E2.salary 매니저연봉
+FROM employees E, employees E2
+WHERE E.manager_id = E2.employee_id AND E.salary > E2.salary;
+
+=> SELF JOIN
+SELECT E.last_name, E.salary
+FROM employees E, employees E2
+WHERE E.manager_id = E2.employee_id AND E.salary > E2.salary;
+
+
+
+O
+--문제2
+
+SELECT * FROM employees;
+SELECT * FROM jobs;
+
+
+=>방법1 (JOIN X)
+-- 서브쿼리
+SELECT job_id 
+FROM jobs
+WHERE job_title ='Sales Representative';
+
+SELECT first_name, last_name, salary 
+FROM employees
+WHERE job_id = (SELECT job_id 
+		FROM jobs
+		WHERE job_title ='Sales Representative')
+AND salary BETWEEN 9000 AND 10000;
+
+
+=>방법2 (EQUI JOIN)
+SELECT E.first_name, E.last_name, E.salary
+FROM employees E, jobs J
+WHERE E.job_id = J.job_id AND J.job_title LIKE 'Sales Re%' AND salary BETWEEN 9000 AND 10000;

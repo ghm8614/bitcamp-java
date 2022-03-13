@@ -1,0 +1,33 @@
+O
+--문제1
+SELECT * FROM departments;
+SELECT * FROM employees;
+
+=>
+SELECT D.department_name, MIN(E.salary), MAX(E.salary), AVG(E.salary)
+FROM employees E, departments D
+WHERE E.department_id = D.department_id
+GROUP BY D.department_name
+ORDER BY D.department_name;
+
+
+O
+--문제2
+
+SELECT * FROM employees;
+
+-- 1
+SELECT employee_id, department_id, salary
+FROM employees;
+
+-- 2
+SELECT department_id, ROUND(AVG(salary),0)
+FROM employees
+GROUP BY department_id;
+
+=>방법1.    1+2,  가상테이블+ EQUI JOIN
+SELECT E1.employee_id, E1.department_id, E1.salary, vt.AVG_SALARY
+FROM employees E1, (SELECT department_id, ROUND(AVG(salary),0) AVG_SALARY
+			FROM employees
+			GROUP BY department_id) vt
+WHERE E1.department_id = vt.department_id AND E1.salary > vt.AVG_SALARY;

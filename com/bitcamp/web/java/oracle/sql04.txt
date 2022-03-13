@@ -1,0 +1,39 @@
+O
+--문제1
+
+SELECT*FROM jobs;	
+SELECT*FROM employees;
+
+-- 1
+SELECT job_id, salary
+FROM employees;
+
+-- 2 
+SELECT job_id, job_title 
+FROM jobs;	
+
+-- 1+2
+SELECT J.job_title, SUM(E.salary)
+FROM jobs J, employees E
+WHERE J.job_id = E.job_id
+GROUP BY job_title
+HAVING SUM(E.salary) > 30000
+ORDER BY SUM(E.salary) desc;
+
+
+
+O
+--문제2
+
+SELECT*FROM locations
+WHERE city ='Seattle';
+
+-- 서브쿼리 (location 값 리턴)
+SELECT location_id FROM locations WHERE city ='Seattle';  
+
+=>
+SELECT E.employee_id, E.first_name, J.job_title, D.department_name
+FROM employees E, jobs J, departments D
+WHERE E.job_id = J.job_id
+AND E.department_id = D.department_id
+AND D.location_id = (SELECT location_id FROM locations WHERE city ='Seattle');

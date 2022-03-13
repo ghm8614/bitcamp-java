@@ -1,0 +1,252 @@
+O
+--문제1
+
+-- 1
+SELECT employee_id, salary,department_id 
+FROM employees;
+
+-- 2
+SELECT department_id, AVG(salary)
+FROM employees
+GROUP BY department_id;	
+
+-- 2에서 그룹바이 사용으로 1과 2 equi join (inner join) 할 수 없음 
+-> 가상테이블 vt 만들기 (일반 테이블과, 그룹바이한 테이블 JOIN 시, 가상테이블 사용 ????)
+
+SELECT E.employee_id, E.salary, E.department_id 
+FROM employees E, (SELECT department_id, AVG(salary)
+		FROM employees
+		GROUP BY department_id) vt
+WHERE E.department_id = vt.department_id;
+
+
+=> 일반테이블 + 가상테이블 
+=> 방법 1
+SELECT E.employee_id 사원,  vt.부서번호, E.salary 연봉, ROUND(vt.avgsalary,0) 부서평균연봉
+FROM employees E, (SELECT department_id 부서번호, AVG(salary) avgsalary
+		FROM employees
+		GROUP BY department_id) vt
+WHERE E.department_id = vt.부서번호 AND E.salary > vt.avgsalary; 
+
+=> 방법 2
+SELECT E.employee_id 사원, E.department_id 부서번호, E.salary 연봉, ROUND(vt.avgsalary,0) 부서평균연봉
+FROM employees E, (SELECT department_id, AVG(salary) avgsalary
+		FROM employees
+		GROUP BY department_id) vt
+WHERE E.department_id = vt.department_id AND E.salary > vt.avgsalary;
+
+
+
+O
+-- 문제2 
+
+SELECT * FROM employees;
+
+SELECT * FROM employees
+order by salary desc;
+
+SELECT last_name, first_name, salary  
+FROM employees
+order by salary desc;
+
+SELECT rank()over(order by salary desc), last_name, first_name, salary  
+FROM employees;
+
+
+-서브쿼리
+SELECT rank()over(order by salary desc)ranking, last_name, first_name, salary 
+FROM employees;
+
+
+SELECT 
+ranking, last_name, first_name, salary
+FROM (SELECT rank()over(order by salary desc) ranking, last_name, first_name, salary  
+	FROM employees)
+WHERE ranking BETWEEN 6 AND 10;
+
+=>
+SELECT ranking, last_name, first_name, salary
+FROM ( SELECT rank()over(order by salary desc)ranking, last_name, first_name, salary FROM employees)
+WHERE ranking BETWEEN 6 AND 10;
+
+
+
+O
+-- 문제3
+
+SELECT * FROM jobs;
+SELECT * FROM employees;
+
+SELECT job_id, job_title FROM jobs;
+SELECT job_id, hire_date, salary FROM employees;
+
+SELECT 
+J.job_id, J.job_title, E.hire_date, E.salary
+FROM jobs J, employees E
+WHERE J.job_id = E.job_id
+AND J.job_title='Sales Manager';
+
+SELECT 
+E.hire_date 년도, E.salary 평균급여
+FROM jobs J, employees E
+WHERE J.job_id = E.job_id
+AND J.job_title='Sales Manager';
+
+SELECT 
+TO_CHAR(E.hire_date, 'yyyy') 년도, E.salary 평균급여
+FROM jobs J, employees E
+WHERE J.job_id = E.job_id
+AND J.job_title='Sales Manager';
+
+=>
+SELECT TO_CHAR(E.hire_date, 'yyyy') 년도, AVG(E.salary) 평균급여
+FROM jobs J, employees E
+WHERE J.job_id = E.job_id
+AND J.job_title='Sales Manager'
+GROUP BY TO_CHAR(E.hire_date, 'yyyy')
+ORDER BY 년도;
+
+
+
+O
+--문제4		
+
+SELECT * FROM employees;		-> department_id, last_name
+SELECT * FROM departments;	-> department_id, location_id
+SELECT * FROM locations;		-> location_id, city
+
+--서브쿼리
+(SELECT location_id FROM locations
+WHERE city = 'Seattle')
+
+SELECT last_name, manager_id, department_id 
+FROM employees;
+
+SELECT E.last_name, E.manager_id, D.department_name
+FROM employees E, departments D
+WHERE E.department_id = D.department_id;
+
+SELECT E.last_name, E.manager_id, D.department_name
+FROM employees E, departments D
+WHERE E.department_id = D.department_id AND D.location_id = (SELECT location_id 
+							FROM locations
+							WHERE city = 'Seattle')
+ORDER BY E.last_name;
+
+
+=>
+SELECT E.last_name 사원이름, NVL(E2.last_name,'<없음>') 매니저이름, D.department_name 부서이름
+FROM employees E, departments D, employees E2
+WHERE E.department_id = D.department_id AND D.location_id = (SELECT location_id 
+							FROM locations
+							WHERE city = 'Seattle')
+AND E.manager_id = E2.employee_id(+)
+ORDER BY E.last_name;
+
+
+
+O
+--문제5		
+
+SELECT * FROM employees;
+SELECT * FROM departments;
+
+SELECT department_id, salary FROM employees;
+
+-- 1. 부서 id별 최소급여 (다중행, 다중열 테이블)
+SELECT department_id, MIN(salary)
+FROM employees
+GROUP BY department_id;
+
+SELECT last_name, department_id, salary FROM employees;
+
+SELECT department_id, department_name FROM departments;
+
+-- 2. 전체 사원의 이름, 부서명, 급여
+SELECT 
+E.last_name 사원이름, D.department_name 부서이름, E.salary 급여
+FROM employees E, departments D
+WHERE E.department_id = D.department_id;
+
+=> 1+2
+SELECT E.last_name 사원이름, D.department_name 부서이름, E.salary 급여, vt.최소급여
+FROM employees E, departments D, (SELECT department_id, MIN(salary) 최소급여
+				FROM employees
+				GROUP BY department_id) vt
+WHERE E.department_id = D.department_id
+AND D.department_id = vt.department_id
+AND E.salary = vt.최소급여
+ORDER BY D.department_name, E.last_name;
+
+
+
+O
+--문제6
+
+SELECT * FROM employees;
+SELECT * FROM departments;
+SELECT * FROM locations;
+
+
+SELECT D.location_id, L.city
+FROM departments D, locations L
+WHERE D.location_id = L.location_id
+GROUP BY D.location_id, L.city;
+
+SELECT *
+FROM employees E, departments D
+WHERE E.department_id = D.department_id;
+
+SELECT D.location_id, AVG(E.salary), COUNT(employee_id)
+FROM employees E, departments D
+WHERE E.department_id = D.department_id
+GROUP BY D.location_id
+HAVING COUNT(employee_id) <10;
+
+=>
+SELECT L.city, AVG(E.salary), COUNT(employee_id)
+FROM employees E, departments D, locations L
+WHERE E.department_id = D.department_id AND D.location_id = L.location_id
+GROUP BY L.city
+HAVING COUNT(employee_id) <10
+ORDER BY AVG(E.salary);
+
+
+O
+--문제7
+SELECT * FROM departments;
+SELECT * FROM employees;
+
+SELECT * FROM employees
+WHERE department_id = 30;
+
+=>
+SELECT J.job_title, AVG(E.salary)
+FROM employees E, jobs J
+WHERE E.department_id = 30 AND E.job_id = J.job_id
+GROUP BY J.job_title
+HAVING AVG(E.salary) > 2000;
+
+
+O
+--문제8
+
+SELECT * FROM employees;   -> employee_id, last_name, first_name
+SELECT * FROM jobs;		-> job_id, job_title	('Pulbic Account')
+SELECT * FROM job_history;	-> job_id, employee_id
+
+SELECT job_title, job_id 
+FROM jobs;	
+
+SELECT job_id, employee_id 
+FROM job_history;
+
+SELECT employee_id, last_name, first_name
+FROM employees;
+
+=>
+SELECT JH.employee_id 사번, concat(concat(E.first_name,' '), E.last_name) 이름
+FROM jobs J, job_history JH, employees E
+WHERE J.job_id = JH.job_id 
+AND E.employee_id = JH.employee_id
+AND job_title = 'Public Accountant';

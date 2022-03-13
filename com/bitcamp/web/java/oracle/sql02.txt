@@ -1,0 +1,27 @@
+O
+--문제1
+
+SELECT * FROM employees;
+SELECT * FROM departments;
+
+SELECT hire_date 
+FROM employees;
+
+SELECT employee_id, first_name, last_name, department_id
+FROM employees
+WHERE hire_date LIKE '99%';
+
+==>
+SELECT E.employee_id, E.first_name, E.last_name, NVL(D.department_name,'<NOT-ASSIGNED>') department_name
+FROM employees E, departments D
+WHERE hire_date LIKE '99%' AND E.department_id = D.department_id(+);
+
+
+O
+--문제2
+
+=>
+SELECT * FROM employees
+WHERE department_id = (SELECT department_id 
+			FROM departments 
+			WHERE department_name = 'Marketing');
