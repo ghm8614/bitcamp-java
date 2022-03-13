@@ -1,0 +1,100 @@
+2장 문제3  O
+SELECT J.job_title, AVG(E.salary) 평균급여
+FROM employees E, jobs J
+WHERE E.salary > 10000
+AND E.job_id = J.job_id
+GROUP BY J.job_title
+ORDER BY 평균급여 DESC;
+
+
+======================================================
+3장 문제3 @
+SELECT employee_id, first_name, salary
+FROM employees;
+
+-- IN + LIKE : 실행 X
+SELECT employee_id, first_name, salary
+FROM employees
+WHERE salary > 4000 AND first_name LIKE IN ('Al%','%al%');
+
+
+=> 방법1
+SELECT employee_id, first_name, salary
+FROM employees
+WHERE salary > 4000 AND lower(first_name) LIKE lower('%al%');
+
+======================================================
+4장 문제3 O
+=>
+SELECT E.employee_id, E.first_name, E.salary
+FROM employees E, jobs J
+WHERE E.job_id = J.job_id AND J.job_title IN ('Accountant','Stock Clerk');
+
+
+======================================================
+5장 문제3 O
+-- 1
+SELECT E.employee_id, D.department_name, E.salary
+FROM employees E, departments D
+WHERE E.department_id = 30 AND E.department_id=D.department_id;
+
+-- 2. department_id = 30 인 부서의 평균연봉
+SELECT department_id, AVG(salary)
+FROM employees
+WHERE department_id = 30
+GROUP BY department_id;
+
+=> 1+2
+SELECT E.employee_id, D.department_name, E.salary, vt.AVG_salary
+FROM employees E, departments D, (SELECT department_id, AVG(salary) AVG_salary
+				FROM employees
+				WHERE department_id = 30
+				GROUP BY department_id) vt
+WHERE E.department_id = 30 AND E.department_id=D.department_id AND E.department_id=vt.department_id;
+
+
+
+======================================================
+6장 문제3 O
+
+-- South San Francisco, 7000, 10000
+
+SELECT * FROM locations;
+SELECT * FROM departments;
+SELECT * FROM empolyees;
+
+SELECT location_id FROM locations
+WHERE city = 'South San Francisco';
+
+--1
+SELECT * 
+FROM departments
+WHERE location_id = (SELECT location_id FROM locations
+			WHERE city = 'South San Francisco');
+--2
+SELECT * FROM employees
+WHERE department_id = 50 AND salary BETWEEN 7000 AND 10000;
+
+=> 1+2
+SELECT E.last_name, D.department_name
+FROM employees E, departments D
+WHERE E.department_id = 50 AND E.salary BETWEEN 7000 AND 10000 AND D.location_id = (SELECT location_id FROM locations
+										WHERE city = 'South San Francisco');
+
+
+======================================================
+7장 문제3 @
+SELECT * FROM employees;
+SELECT * FROM departments;
+SELECT * FROM locations;
+
+=>
+SELECT L.city, D.department_name, E.first_name, E.salary 
+FROM employees E, departments D, locations L
+WHERE E.department_id = D.department_id 
+AND L.location_id=D.location_id
+AND lower(L.city) LIKE lower('%lake%')
+AND lower(D.department_name) LIKE lower('%it%');
+
+
+
