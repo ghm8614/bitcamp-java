@@ -1,5 +1,7 @@
 package com.bitcamp.web.java.servlet.day02;
 
+// 1. Client Data 를 Object Modeling
+// 2. Value Object : Data 를 갖는 객체
 public class UserVO {
 
     //F

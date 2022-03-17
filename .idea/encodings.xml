@@ -30,16 +30,26 @@
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/prob/Prob4.java" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/prob/Prob5.java" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/prob/Prob6.java" charset="x-windows-949" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/FirstServlet.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/GetData.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/GetDataKr.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/GetDataKrATagServletMapping.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/HelloServletService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/HelloServletdoGet.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/HelloServletdoPost.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/LoginBeanInitParam.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/PostData.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/PostDataATagServletMapping.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/FirstServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/FirstServlet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetDataKr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetDataKr.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetDataKrATagServletMapping.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/GetDataKrATagServletMapping.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletdoGet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletdoGet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletdoPost.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/HelloServletdoPost.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/PostData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/PostData.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/PostDataATagServletMapping.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day01/PostDataATagServletMapping.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/day02/LoginBeanInitParam.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/web.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/servlet/webCopy.xml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/test/Example1.java" charset="x-windows-949" />
     <file url="file://$PROJECT_DIR$/com/bitcamp/web/java/test/Example2.java" charset="x-windows-949" />

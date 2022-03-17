@@ -9,10 +9,10 @@ import java.sql.ResultSet;
 // Connection Pool 을 SPEC화 한 javax.sql.DataSource 사용
 public class UserDataSourceDao {
 
-    //    F
-    //    String dburl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
-    //    String dbuser = "scott";
-    //    String dbpwd = "tiger";
+    //F
+    // String dburl = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+    // String dbuser = "scott";
+    // String dbpwd = "tiger";
 
     //C
     public UserDataSourceDao() {

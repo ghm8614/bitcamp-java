@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+// DAO : Data Access Object (data 贸府 棺 立辟 按眉)
 public class UserDao {
 
     //F

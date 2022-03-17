@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+// JDBC 절차 중 Connection 인스턴스 생성 및 관리를 전담하는 Connection Pool 사용
 public class UserPoolDao {
 
 //    F

@@ -41,7 +41,7 @@ public class LoginBean extends HttpServlet {
             out.println("Login 실패 id, pwd를 확인하세요");
         }
 
-        out.println("<p><p><a href='/edu/jw05/loginBean.html'>뒤로</a>");
+        out.println("<p><p><a href='/edu/jw04/loginBean.html'>뒤로</a>");
         out.println("</body>");
         out.println("</html>");
 

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Connection Pool 을 SPEC 화 한 javax.sql.DataSource 사용
+
 //@WebServlet("/LoginBeanDataSource")
 public class LoginBeanDataSource extends HttpServlet {
 

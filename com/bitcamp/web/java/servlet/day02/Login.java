@@ -77,7 +77,7 @@ public class Login extends HttpServlet {
             out.println("id, pwd 를 확인하세요.");
         }
 
-        out.println("<p><p><a href='/edu/jw05/login.html'>뒤로</a>");
+        out.println("<p><p><a href='/edu/jw04/login.html'>뒤로</a>");
         out.println("</body>");
         out.println("</html>");
 

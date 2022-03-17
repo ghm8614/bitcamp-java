@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// UserDAO.java : 특정 DB에 종속적
+// DB 접속 정보를 web.xml(Meta-Data)에 등록
+// 특정 DB에 종속적이지 않는 DAO 구성가능
 
 //@WebServlet("/LoginBeanInitParam")
 public class LoginBeanInitParam extends HttpServlet {
